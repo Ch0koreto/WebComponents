@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<diagrama-valores width="300" height="150" elements="[4,5,7,2]"></diagrama-valores>
+
+<script>
+let colours = ["blue", "green", "yellow", "red", "orange", "navy", "red"];
+let elements = [8, 4, 2, 2, 7];
+let total = elements.reduce((a,e)=>a+e,0);
+let centerX = 100;
+let centerY = 75;
+let radius = 50;
+let c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+
+let begin =0;
+let end;
+elements.forEach((element,i) => {
+  ctx.beginPath();
+  end = (2 * element / total) + begin;
+  ctx.fillStyle = colours[i];
+  ctx.moveTo(centerX,centerY);
+  ctx.arc(centerX, centerY, radius, begin * Math.PI, end * Math.PI);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+  begin = end;  
+});
+
+
+</script> 
+
+</body>
+</html>

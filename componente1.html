@@ -34,12 +34,16 @@
           </div>
         </div>
 
-        <mi-tarjeta my-title="This is a title"
-        my-text-button="Edit"
+        <mi-tarjeta
+          my-title="This is a title"
+          my-text-button="Edit"
+          my-url="https://google.es"
         ></mi-tarjeta>
-        <mi-tarjeta my-title="This is another title"
-        my-text-button="Buy"
+        <mi-tarjeta
+          my-title="This is another title"
+          my-text-button="Buy"
         ></mi-tarjeta>
+        <div id="contenedor"></div>
       </div>
     </div>
     <script
@@ -47,5 +51,12 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const contenedor = document.querySelector('#contenedor');
+      let nuevaTarjeta = document.createElement("mi-tarjeta");
+      nuevaTarjeta.setAttribute('my-title', 'Tarjeta 4');
+      contenedor.append(nuevaTarjeta);
+
+    </script>
   </body>
 </html>

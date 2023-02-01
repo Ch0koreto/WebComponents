@@ -3,6 +3,7 @@ class MiTarjeta extends HTMLElement {
     super();
     let title = this.getAttribute('my-title');
     let button = this.getAttribute('my-text-button');
+    let url = this.getAttribute('my-url') || './componente.html';
     this.innerHTML = `
     <img
       src="https://via.placeholder.com/150x100"
@@ -15,7 +16,7 @@ class MiTarjeta extends HTMLElement {
         Some quick example text to build on the card title and make up the
         bulk of the card's content.
       </p>
-      <a href="#" class="btn btn-primary">${button}</a>
+      <a href="${url}" class="btn btn-primary">${button}</a>
     </div>
     `;
     this.classList.add('card');
